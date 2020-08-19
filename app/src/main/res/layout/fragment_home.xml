@@ -1,0 +1,74 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.devtahreem.testproject.ui.home.HomeFragment"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/searchHomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:maxLength="20"
+        android:lines="1"
+        android:maxLines="1"
+        android:inputType="text"
+        android:hint="Search User"
+        android:layout_below="@id/toolbar1"
+        app:layout_anchor="@+id/recyclerView"
+        app:layout_anchorGravity="top|center"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:background="@color/colorPrimary"
+        app:menu="@menu/logout_item"
+        app:titleTextColor="@color/cardview_dark_background">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/toolbarTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:padding="5dp"
+        android:layout_below="@id/searchHomeFragment"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:scrollbars="vertical" />
+    </RelativeLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:menu="@menu/bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

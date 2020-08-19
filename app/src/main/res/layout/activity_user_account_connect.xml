@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context="com.devtahreem.testproject.UserAccount"
+        tools:menu="@menu/logout_item">
+
+
+        <Button
+            android:id="@+id/buttonConnect"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="Connect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.253"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutConnect"
+            app:layout_constraintVertical_bias="0.08"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:menu="@menu/logout_item"
+            android:background="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbarTextViewConnect"
+                android:text="User's Account"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/nameConnect"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toEndOf="@+id/imageViewConnect"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarConnect"
+            app:layout_constraintVertical_bias="0.080"/>
+
+        <TextView
+            android:id="@+id/addressConnect"
+            android:layout_width="200dp"
+            android:text="Address"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/age"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ageConnect"
+            app:layout_constraintTop_toBottomOf="@+id/ageConnect"
+            app:layout_constraintVertical_bias="0.080"/>
+
+        <TextView
+            android:id="@+id/aboutConnect"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="About"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="@id/occupationConnect"
+            app:layout_constraintStart_toStartOf="@+id/occupationConnect"
+            app:layout_constraintTop_toBottomOf="@+id/occupationConnect"
+            app:layout_constraintVertical_bias="0.080" />
+
+        <TextView
+            android:id="@+id/occupationConnect"
+            android:layout_width="200dp"
+            android:text="Occupation"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/addressConnect"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addressConnect"
+            app:layout_constraintTop_toBottomOf="@+id/addressConnect"
+            app:layout_constraintVertical_bias="0.080"/>
+
+        <TextView
+            android:id="@+id/ageConnect"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Age of the user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/nameConnect"
+            app:layout_constraintTop_toBottomOf="@+id/nameConnect"
+            app:layout_constraintVertical_bias="0.080"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewConnect"
+            android:layout_width="74dp"
+            android:layout_height="71dp"
+            android:src="@drawable/dp1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarConnect"
+            app:layout_constraintVertical_bias="0.113" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:foregroundGravity="center"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
